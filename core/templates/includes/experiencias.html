@@ -1,0 +1,48 @@
+{% load static %}
+
+    <section class="experiences" id="experiencias">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">ENCONTRE O SEU PRÓXIMO MERGULHO</p>
+            <h2>De perto, é ainda mais bonito.</h2>
+          </div>
+          <div class="carousel-nav">
+            <span class="carousel-nav__count"><span id="slideCurrent">01</span> / <span id="slideTotal">01</span></span>
+            <button class="round-btn" id="prevSlide" type="button" aria-label="Anterior">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7.500 3.500 3 8l4.500 4.500"/></svg>
+            </button>
+            <button class="round-btn" id="nextSlide" type="button" aria-label="Próximo">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M8.500 3.500 13 8l-4.500 4.500"/></svg>
+            </button>
+          </div>
+        </div>
+
+        {% if experiencias %}
+          <article class="slide" id="slide">
+            <div class="slide__image" id="slideImage">
+              <span class="tag">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M2 5c1.200-1 2.300-1 3.500 0s2.300 1 3.500 0 2.300-1 3.500 0M2 8.500c1.200-1 2.300-1 3.500 0s2.300 1 3.500 0 2.300-1 3.500 0M2 12c1.200-1 2.300-1 3.500 0s2.300 1 3.500 0 2.300-1 3.500 0"/></svg>
+                <span id="slideTag"></span>
+              </span>
+            </div>
+            <div class="slide__info">
+              <div>
+                <h3 id="slideTitle"></h3>
+                <p id="slideText"></p>
+              </div>
+              <a href="#contato" class="link-arrow">
+                Quero conhecer
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.500 4H12v6.500"/></svg>
+              </a>
+            </div>
+            <div class="dots" id="dots" role="tablist"></div>
+          </article>
+
+          {{experiencias_json|json_script:"experiencias-data" }}
+
+        {% else %}
+          <p>Nossas experiências estarão disponíveis em breve.</p>
+        {% endif %}
+      </div>
+    </section>

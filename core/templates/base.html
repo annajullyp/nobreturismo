@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nobre Turismo — O extraordinário é natural.</title>
+  <meta name="description" content="Águas que surpreendem. Caminhos que conectam. Descubra Nobres com a Nobre Turismo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#topo" class="logo" aria-label="Nobre Turismo">
+        <svg class="logo__icon" viewBox="0 0 48 44" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 3C17 12 5 19 5 28c0 8 8 13 19 13s19-5 19-13c0-9-12-16-19-25Z"/>
+          <path d="M9 27c5-4 9-4 15 0s10 4 15 0"/>
+          <path d="M14 34c4-3 7-3 10 0s6 3 10 0"/>
+        </svg>
+        <span class="logo__text">
+          <strong>nobre</strong>
+          <small>TURISMO</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#experiencias">Experiências</a>
+        <a href="#por-que">Por que a Nobre</a>
+        <a href="#guias">Nossos guias</a>
+      </nav>
+
+      {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}" class="btn btn--primary">
+            Sair
+          </a>
+      {% else %}
+        <a href="{% url 'login' %}" class="btn btn--primary">
+          Fazer login
+          <svg class="btn__arrow" viewBox="0 0 16 16" fill="none"
+             stroke="currentColor" stroke-width="1.6"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+            <path d="M4 12 12 4M5.5 4H12v6.5"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+  </header>
+
+  <main id="topo">
+      {% block conteudo %}
+      {% endblock %}
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="#topo" class="logo" aria-label="Nobre Turismo">
+          <svg class="logo__icon" viewBox="0 0 48 44" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M24 3C17 12 5 19 5 28c0 8 8 13 19 13s19-5 19-13c0-9-12-16-19-25Z"/>
+            <path d="M9 27c5-4 9-4 15 0s10 4 15 0"/>
+            <path d="M14 34c4-3 7-3 10 0s6 3 10 0"/>
+          </svg>
+          <span class="logo__text"><strong>nobre</strong><small>TURISMO</small></span>
+        </a>
+        <nav class="footer__nav" aria-label="Rodapé">
+          <a href="#experiencias">Experiências</a>
+          <a href="#guias">Nossos guias</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Nobre Turismo.</p>
+        <p>Nobres • Mato Grosso • Brasil</p>
+        <a href="#topo" class="footer__top-link">
+          Voltar ao topo
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M3.500 7.500 8 3l4.500 4.500"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+<script>
+  const slideImages = [
+          "{% static 'medias/flutuacao.jpeg' %}",
+          "{% static 'medias/cachoeira.jpeg' %}",
+          "{% static 'medias/balneario.jpeg' %}"
+  ];
+</script>
+<script src="{% static 'js/main.js' %}" defer></script>
+</body>
+</html>

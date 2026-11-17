@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo %}
+  <!-- ============ HERO ============ -->
+  {% include 'includes/hero.html' %}
+
+  <!-- ============ EXPERIENCIAS ============ -->
+  {% if user.is_authenticated %}
+    {% include 'includes/experiencias.html' %}
+  {% else %}
+    <section class="experiences" id="experiencias">
+      <div class="container">
+        <div class="login-banner">
+          <h3>Conheça nossas atrações exclusivas!</h3>
+          <h2>Faça login para visualizar todas as experiências disponíveis.</h2>
+          <br>
+          <a href="{% url 'login' %}" class="btn btn--primary">
+            Fazer login
+            <svg class="btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- ============ DIFERENCIAIS ============ -->
+  {% include 'includes/diferenciais.html' %}
+
+  <!-- ============ GUIAS ============ -->
+  {% include 'includes/guias.html' %}
+
+  <!-- ============ CONTATO ============ -->
+  {% include 'includes/contato.html' %}
+{% endblock %}
