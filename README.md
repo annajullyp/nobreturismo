@@ -66,6 +66,11 @@ nobreturismo/
 
 *Observação: a estrutura acima apresenta a organização geral da aplicação.*
 
+## 💻 Acesse o projeto
+
+annajullyp.pythonanywhere.com
+
+
 ## 🚀 Como executar o projeto
 
 ### 1. Pré-requisitos
@@ -180,6 +185,11 @@ As ferramentas foram utilizadas como apoio ao processo de desenvolvimento, com a
 | **ChatGPT** | Apoio na resolução de dúvidas, identificação e correção de problemas, explicação de conceitos e aprimoramento de detalhes técnicos durante o desenvolvimento. |
 
 **Observação:** as ferramentas de IA foram utilizadas como recursos complementares, auxiliando no processo de aprendizagem e desenvolvimento da aplicação. As sugestões geradas foram avaliadas e adaptadas conforme os requisitos do projeto.
+
+## 📽️ Vídeo Explicativo
+
+https://drive.google.com/drive/folders/1oa7Vni30vJNnooOrZpeV7X3GHChXFrUj?usp=sharing
+
 
 ## 👩‍💻 Desenvolvedora
 
