@@ -34,21 +34,30 @@
         <a href="#guias">Nossos guias</a>
       </nav>
 
-      {% if user.is_authenticated %}
+      <div class="header__actions">
+        {% if user.is_authenticated %}
+          <span class="profile-icon" title="{{ user.get_username }}" aria-label="Perfil de {{ user.get_username }}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>
+            </svg>
+          </span>
           <a href="{% url 'logout' %}" class="btn btn--primary">
             Sair
           </a>
-      {% else %}
-        <a href="{% url 'login' %}" class="btn btn--primary">
-          Fazer login
-          <svg class="btn__arrow" viewBox="0 0 16 16" fill="none"
-             stroke="currentColor" stroke-width="1.6"
-             stroke-linecap="round" stroke-linejoin="round"
-             aria-hidden="true">
-            <path d="M4 12 12 4M5.5 4H12v6.5"/>
-          </svg>
-        </a>
-      {% endif %}
+        {% else %}
+          <a href="{% url 'login' %}" class="btn btn--primary">
+            Fazer login
+            <svg class="btn__arrow" viewBox="0 0 16 16" fill="none"
+               stroke="currentColor" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+              <path d="M4 12 12 4M5.5 4H12v6.5"/>
+            </svg>
+          </a>
+        {% endif %}
+      </div>
+
     </div>
   </header>
 

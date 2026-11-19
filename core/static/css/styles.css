@@ -119,15 +119,31 @@ button { font: inherit; cursor: pointer; }
   column-gap: 50px;
 }
 
-.header__inner form {
-    justify-self: end;
-    margin: 0;
+.header__actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.header__inner form .btn {
-    height: 52px;
-    padding: 0 24px;
+.header__actions .btn {
+  height: 52px;
+  padding: 0 24px;
 }
+
+/* Ícone de perfil */
+.profile-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--green-700);
+}
+.profile-icon svg { width: 26px; height: 26px; }
 
 /* Menu */
 .nav {
@@ -491,11 +507,11 @@ h2 {
   :root { --gutter: 20px; }
   .header { height: 76px; }
   .nav { display: none; }
-  .header__inner { gap: 16px; }
-  .header__actions { margin-left: auto; gap: 12px; }
-  .profile-icon { width: 40px; height: 40px; font-sixe: 34px; }
-  .profile-icon i { font-size: 34px; }
-  .header__inner .btn { height: 44px; padding: 0 18px; font-size: 14px; }
+  .header__inner { grid-template-columns: 1fr auto; column-gap: 16px; }
+  .header__actions { gap: 10px; }
+  .profile-icon { width: 44px; height: 44px; }
+  .profile-icon svg { width: 22px; height: 22px; }
+  .header__actions .btn { height: 44px; padding: 0 18px; font-size: 14px; }
   .hero, .hero__inner { min-height: 560px; }
   .hero__content { margin-top: 56px; }
   .hero__text br { display: none; }
@@ -631,6 +647,3 @@ h2 {
 }
 .auth-google:hover { background: var(--cream); border-color: var(--green-700); }
 .auth-google svg { width: 18px; height: 18px; flex: none; }
-
-
-
